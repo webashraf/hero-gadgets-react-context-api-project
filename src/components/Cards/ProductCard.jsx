@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { addToDb } from '../../utilitis/fakeDb';
+import { CartContex } from '../../App';
 
 const ProductCard = ({ product }) => {
   const { name, picture, price, category, id } = product;
+  const [cart, setCart] = useContext(CartContex)
   const handleAddProduct = id =>{
     addToDb(id)
   }

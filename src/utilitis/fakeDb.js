@@ -31,3 +31,19 @@ export const getProductFromDb = () =>{
     }
     return cartProducts;
 }
+
+
+export const removeFromDb = id => {
+    const storedCard = localStorage.getItem("shopping-cart");
+    if (storedCard) {
+       const cartProducts = JSON.parse(storedCard);
+        if (id in cartProducts) {
+            delete cartProducts[id];
+            localStorage.setItem("shopping-cart", JSON.stringify(cartProducts))
+        }
+
+    }
+console.log('Clicked');
+}
+
+export const clearShoppingCart = () => localStorage.removeItem("shopping-cart");
