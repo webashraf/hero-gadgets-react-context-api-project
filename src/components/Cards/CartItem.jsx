@@ -1,9 +1,12 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom'
 
 const CartItem = ({ product }) => {
+  // const cartData = useLoaderData();
+  // console.log(cart);
   const { id, name, price, quantity, picture } = product
   return (
-    <li className='flex flex-col py-6 sm:flex-row sm:justify-between'>
+    <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
       <div className='flex w-full space-x-2 sm:space-x-4'>
         <img
           className='flex-shrink-0 object-cover w-20 h-20 border-transparent rounded outline-none sm:w-32 sm:h-32 bg-gray-500'
