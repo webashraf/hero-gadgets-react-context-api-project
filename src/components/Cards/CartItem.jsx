@@ -3,10 +3,7 @@ import { useLoaderData } from 'react-router-dom'
 import { CartContex } from '../../App'
 import { removeFromDb } from '../../utilitis/fakeDb'
 
-const CartItem = ({ product }) => {
-const handleRemoveBtn = id =>{
-  removeFromDb(id)
-}
+const CartItem = ({ product, handleRemoveBtn }) => {
   const { id, name, price, quantity, picture } = product
   return (
     <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
